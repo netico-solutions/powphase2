@@ -1,5 +1,7 @@
 import time
 import sys
+import re
+import os
 import platform
 import subprocess
 import json
@@ -54,7 +56,9 @@ class saveCsvWindow(QDialog):
             if not remote_files:
                 raise Exception("Please select a file.")
 
-            remote_csv_filename = '/usr/local/src/pow-edge-app/' + remote_files[0]
+            remote_csv_filename = '/' + remote_files[0]
+            remote_csv_filename = remote_csv_filename[0:18]
+            print(remote_csv_filename)
 
             ftp = self.ssh_client.open_sftp()
             remote_csv_file = ftp.file(remote_csv_filename, "r")
@@ -84,9 +88,12 @@ class saveCsvWindow(QDialog):
             ftp = self.ssh_client.open_sftp()
             csv_files = []
 
-            for filename in ftp.listdir('/usr/local/src/pow-edge-app/'):
+            for filename in ftp.listdir('/'):
                 if fnmatch.fnmatch(filename, "*.csv"):
                     csv_files.append(filename)
+
+            for index in range(len(csv_files)):
+                csv_files[index] = csv_files[index] + "\t\t\t" + "{:.3f}".format((ftp.stat('/' + csv_files[index]).st_size) / 1000.0) + "kB"
 
             csv_files.sort()
 

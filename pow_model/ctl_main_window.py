@@ -13,7 +13,7 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.ui = main_window.Ui_PointOnWaveConfigurator()
         self.ui.setupUi(self)
-        self.ui.actionClose.triggered.connect(self.closeEvent)
+        self.ui.actionClose.triggered.connect(self.closeMain)
         self.ui.push_read_json.clicked.connect(self.read_json_parameters)
         self.ui.push_write_json.clicked.connect(self.write_json_parameters)
         self.ui.push_open_files.clicked.connect(self.download_csv)
@@ -24,6 +24,8 @@ class MainWindow(QMainWindow):
         self.loginfirst()
         self.run()
 
+    def closeMain(self):
+        sys.exit(0)
 
     def loginfirst(self):
         self.li = ctl_login.loginWindow()

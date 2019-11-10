@@ -99,7 +99,7 @@ class Ui_PointOnWaveConfigurator(object):
         self.text_start_close_B = QtWidgets.QLineEdit(self.frame_4)
         self.text_start_close_B.setGeometry(QtCore.QRect(190, 100, 81, 28))
         self.text_start_close_B.setFocusPolicy(QtCore.Qt.ClickFocus)
-        self.text_start_close_B.setObjectName("text_start_close_b")
+        self.text_start_close_B.setObjectName("text_start_close_B")
         self.text_start_open_B = QtWidgets.QLineEdit(self.frame_4)
         self.text_start_open_B.setGeometry(QtCore.QRect(80, 100, 81, 28))
         self.text_start_open_B.setFocusPolicy(QtCore.Qt.ClickFocus)
