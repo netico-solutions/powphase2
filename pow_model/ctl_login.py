@@ -3,19 +3,24 @@ import json
 import platform
 import subprocess
 import paramiko
+import threading
 
 from pow_view import login
-from . import ctl_ping
+from . import ctl_ping, ctl_message
 from PyQt5.QtWidgets import QDialog
 
 class loginWindow(QDialog):
     def __init__(self):
+        self.conn_active_flag = False
         super().__init__()
         self.ui = login.Ui_ConnectDialog()
         self.ui.setupUi(self)
         self.ui.Ping.clicked.connect(self.ping_button_clicked)
         self.ui.Connect.clicked.connect(self.connect_button_clicked)
-        #self.setModal(True)
+        self.is_alive_thread = threading.Thread(target=self.is_active, args=())
+        self.is_alive_thread.setDaemon(True)
+        self.is_alive_thread.start()
+        self.setModal(True)
         self.show()
         self.exec()
 
@@ -42,12 +47,38 @@ class loginWindow(QDialog):
         self.ssh_client = paramiko.SSHClient()
         self.ssh_client.load_system_host_keys()
         self.ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
         try:
-            self.ssh_client.connect(ip, username=user, password=passw)
-        except:
+            self.ssh_client.connect(ip, username=user, password=passw, timeout=2)
+            self.conn_active_flag = True
+            self.hide()
+
+        except Exception as e:
+            text = "Connection Error: " + str(e)
+            mw = ctl_message.Message(text)
             print("Connection Error!")
-            #todo failed to connect dialog
-            #todo handle reconnect
+            time.sleep(1)
+
+    def is_active(self):
+        while True:
+            while self.conn_active_flag:
+                try:
+                    print("checking connection")
+                    self.ssh_client.exec_command('ls', timeout=3)
+                    time.sleep(3)
+                except Exception as e:
+                    print("Connection Error isnt alive!")
+                    self.ssh_client.close()
+                    self.conn_active_flag = False
+                    time.sleep(1)
+                    text = "Connection Error: " + str(e)
+                    mw = ctl_message.Message(text)
+                    self.show()
+                    break
+
+            else:
+                time.sleep(2)
+                print("no active conn")
 
 
-        self.hide()
+

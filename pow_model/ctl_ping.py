@@ -9,6 +9,7 @@ from PyQt5 import QtGui
 class PingWindow(QDialog):
     def __init__(self, ip):
         super().__init__()
+        self.setModal(True)
         self.ip = ip
         self.ui = ping.Ui_PingDialog()
         self.ui.setupUi(self)
