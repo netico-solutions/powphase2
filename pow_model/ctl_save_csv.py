@@ -15,7 +15,7 @@ from PyQt5 import QtGui
 class saveCsvWindow(QDialog):
     def __init__(self):
         super().__init__()
-
+        self.filepath = '/usr/local/src/pow-edge-app/'
 
         with open('target.json', 'r') as outfile:
             self.ssh_target = json.load(outfile)
@@ -26,6 +26,8 @@ class saveCsvWindow(QDialog):
         self.ui.listView.setModel(self.list_entry_model)
         self.ui.push_list_files.clicked.connect(self.list_remote_directory)
         self.ui.push_save_file.clicked.connect(self.save_file_to_local)
+        self.ui.push_delete_file.clicked.connect(self.delete_selected_files)
+        self.ui.push_delete_file.setEnabled(False)
         self.ui.push_save_file.setEnabled(False)
 
         self.ssh_client = paramiko.SSHClient()
@@ -50,14 +52,19 @@ class saveCsvWindow(QDialog):
             remote_files = []
             selected_items = self.ui.listView.selectedIndexes()
 
-            for sel in selected_items:
-                remote_files.append(sel.data())
+            for item in selected_items:
+                remote_files.append(item.data())
 
             if not remote_files:
                 raise Exception("Please select a file.")
 
-            remote_csv_filename = '/' + remote_files[0]
-            remote_csv_filename = remote_csv_filename[0:18]
+            if len(remote_files) > 1:
+                raise Exception("Please select just one file.")
+
+            remote_file = remote_files[0]
+            sep = '\t'
+            remote_file = remote_file.split(sep, 1)[0]
+            remote_csv_filename = self.filepath + remote_file
             print(remote_csv_filename)
 
             ftp = self.ssh_client.open_sftp()
@@ -84,16 +91,15 @@ class saveCsvWindow(QDialog):
 
 
     def list_remote_directory(self):
+        self.list_entry_model.clear()
+
         try:
             ftp = self.ssh_client.open_sftp()
             csv_files = []
 
-            for filename in ftp.listdir('/'):
-                if fnmatch.fnmatch(filename, "*.csv"):
-                    csv_files.append(filename)
-
-            for index in range(len(csv_files)):
-                csv_files[index] = csv_files[index] + "\t\t\t" + "{:.3f}".format((ftp.stat('/' + csv_files[index]).st_size) / 1000.0) + "kB"
+            for csv_file in ftp.listdir_attr(self.filepath):
+                if fnmatch.fnmatch(csv_file.filename, "*.csv"):
+                    csv_files.append(csv_file.filename + '\t\t\t\t' + "{:.3f}".format((csv_file.st_size / 1000.0)) + "kB")
 
             csv_files.sort()
 
@@ -102,6 +108,7 @@ class saveCsvWindow(QDialog):
                 self.list_entry_model.appendRow(item)
 
             self.ui.push_save_file.setEnabled(True)
+            self.ui.push_delete_file.setEnabled(True)
 
         except Exception as e:
             text = "Error: " + str(e)
@@ -109,6 +116,26 @@ class saveCsvWindow(QDialog):
             print(e)
             ftp.close()
             self.close()
+
+    def delete_selected_files(self):
+        remote_files = []
+        selected_items = self.ui.listView.selectedIndexes()
+
+        for sel in selected_items:
+            remote_files.append(sel.data())
+
+        try:
+            for filename in remote_files:
+                command = "rm " + self.filepath + filename
+                self.ssh_client.exec_command(command)
+
+            self.list_remote_directory()
+            raise Exception("File(s) deleted successfully!")
+
+        except Exception as e:
+            text = str(e)
+            mw = ctl_message.Message(text)
+
 
     def closeEvent(self, event):
         self.ssh_client.close()

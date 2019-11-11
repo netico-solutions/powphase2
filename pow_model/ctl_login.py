@@ -1,4 +1,5 @@
 import time
+import sys
 import json
 import platform
 import subprocess
@@ -23,6 +24,9 @@ class loginWindow(QDialog):
         self.setModal(True)
         self.show()
         self.exec()
+
+    def closeEvent(self, event):
+        sys.exit(0)
 
     def ping_button_clicked(self):
         ip = self.ui.ip_adress.text()
@@ -63,11 +67,11 @@ class loginWindow(QDialog):
         while True:
             while self.conn_active_flag:
                 try:
-                    print("checking connection")
                     self.ssh_client.exec_command('ls', timeout=3)
+                    print("Connected.")
                     time.sleep(3)
                 except Exception as e:
-                    print("Connection Error isnt alive!")
+                    print("Connection Error!")
                     self.ssh_client.close()
                     self.conn_active_flag = False
                     time.sleep(1)
@@ -78,7 +82,7 @@ class loginWindow(QDialog):
 
             else:
                 time.sleep(2)
-                print("no active conn")
+                print("No active connection.")
 
 
 

@@ -5,7 +5,7 @@ import threading
 import paramiko
 
 from pow_view import main_window
-from . import ctl_login, ctl_save_csv
+from . import ctl_login, ctl_save_csv, ctl_message
 from PyQt5.QtWidgets import QMainWindow
 
 class MainWindow(QMainWindow):
@@ -20,6 +20,7 @@ class MainWindow(QMainWindow):
         self.ui.push_restart_svc.clicked.connect(self.restart_pow_service)
         self.ui.push_restart_fw.clicked.connect(self.restart_urtu_fw)
         self.ui.push_reboot.clicked.connect(self.reboot_urtu)
+        self.ui.radio_voltage.setChecked(True)
         self.show()
         self.loginfirst()
         self.run()
@@ -47,55 +48,50 @@ class MainWindow(QMainWindow):
         self.sftp_client.close()
 
         #states[0] -> open, states[1] -> close
-        self.ui.text_start_open_A.clear()
-        self.ui.text_start_open_B.clear()
-        self.ui.text_start_open_C.clear()
-        self.ui.text_stop_open_A.clear()
-        self.ui.text_stop_open_B.clear()
-        self.ui.text_stop_open_C.clear()
-        self.ui.text_start_close_A.clear()
-        self.ui.text_start_close_B.clear()
-        self.ui.text_start_close_C.clear()
-        self.ui.text_stop_close_A.clear()
-        self.ui.text_stop_close_B.clear()
-        self.ui.text_stop_close_C.clear()
+        self.ui.text_start_A.clear()
+        self.ui.text_start_B.clear()
+        self.ui.text_start_C.clear()
+        self.ui.text_stop_A.clear()
+        self.ui.text_stop_B.clear()
+        self.ui.text_stop_C.clear()
         self.ui.text_open_impulse.clear()
         self.ui.text_close_impulse.clear()
         self.ui.text_open_angle.clear()
         self.ui.text_close_angle.clear()
         self.ui.text_main_fq.clear()
+        self.ui.radio_voltage.setChecked(False)
+        self.ui.radio_current.setChecked(False)
 
-        self.ui.text_start_open_A.setText(str(self.json_param['states'][0]['parameters'][3]))
-        self.ui.text_start_open_B.setText(str(self.json_param['states'][0]['parameters'][4]))
-        self.ui.text_start_open_C.setText(str(self.json_param['states'][0]['parameters'][5]))
-        self.ui.text_stop_open_A.setText(str(self.json_param['states'][0]['parameters'][6]))
-        self.ui.text_stop_open_B.setText(str(self.json_param['states'][0]['parameters'][7]))
-        self.ui.text_stop_open_C.setText(str(self.json_param['states'][0]['parameters'][8]))
-        self.ui.text_start_close_A.setText(str(self.json_param['states'][1]['parameters'][3]))
-        self.ui.text_start_close_B.setText(str(self.json_param['states'][1]['parameters'][4]))
-        self.ui.text_start_close_C.setText(str(self.json_param['states'][1]['parameters'][5]))
-        self.ui.text_stop_close_A.setText(str(self.json_param['states'][1]['parameters'][6]))
-        self.ui.text_stop_close_B.setText(str(self.json_param['states'][1]['parameters'][7]))
-        self.ui.text_stop_close_C.setText(str(self.json_param['states'][1]['parameters'][8]))
+        self.ui.text_start_A.setText(str(self.json_param['states'][0]['parameters'][3]))
+        self.ui.text_start_B.setText(str(self.json_param['states'][0]['parameters'][4]))
+        self.ui.text_start_C.setText(str(self.json_param['states'][0]['parameters'][5]))
+        self.ui.text_stop_A.setText(str(self.json_param['states'][0]['parameters'][6]))
+        self.ui.text_stop_B.setText(str(self.json_param['states'][0]['parameters'][7]))
+        self.ui.text_stop_C.setText(str(self.json_param['states'][0]['parameters'][8]))
         self.ui.text_open_impulse.setText(str(self.json_param['states'][0]['parameters'][10]))
         self.ui.text_close_impulse.setText(str(self.json_param['states'][0]['parameters'][11]))
         self.ui.text_open_angle.setText(str(self.json_param['states'][0]['angle']))
         self.ui.text_close_angle.setText(str(self.json_param['states'][1]['angle']))
         self.ui.text_main_fq.setText(str(self.json_param['states'][0]['parameters'][9]))
 
+        if self.json_param['states'][1]['parameters'][12]:
+            self.ui.radio_current.setChecked(True)
+        else:
+            self.ui.radio_voltage.setChecked(True)
+
     def write_json_parameters(self):
-        self.json_param['states'][0]['parameters'][3] = float(self.ui.text_start_open_A.text())
-        self.json_param['states'][0]['parameters'][4] = float(self.ui.text_start_open_B.text())
-        self.json_param['states'][0]['parameters'][5] = float(self.ui.text_start_open_C.text())
-        self.json_param['states'][0]['parameters'][6] = float(self.ui.text_stop_open_A.text())
-        self.json_param['states'][0]['parameters'][7] = float(self.ui.text_stop_open_B.text())
-        self.json_param['states'][0]['parameters'][8] = float(self.ui.text_stop_open_C.text())
-        self.json_param['states'][1]['parameters'][3] = float(self.ui.text_start_close_A.text())
-        self.json_param['states'][1]['parameters'][4] = float(self.ui.text_start_close_B.text())
-        self.json_param['states'][1]['parameters'][5] = float(self.ui.text_start_close_C.text())
-        self.json_param['states'][1]['parameters'][6] = float(self.ui.text_stop_close_A.text())
-        self.json_param['states'][1]['parameters'][7] = float(self.ui.text_stop_close_B.text())
-        self.json_param['states'][1]['parameters'][8] = float(self.ui.text_stop_close_C.text())
+        self.json_param['states'][0]['parameters'][3] = float(self.ui.text_start_A.text())
+        self.json_param['states'][0]['parameters'][4] = float(self.ui.text_start_B.text())
+        self.json_param['states'][0]['parameters'][5] = float(self.ui.text_start_C.text())
+        self.json_param['states'][0]['parameters'][6] = float(self.ui.text_stop_A.text())
+        self.json_param['states'][0]['parameters'][7] = float(self.ui.text_stop_B.text())
+        self.json_param['states'][0]['parameters'][8] = float(self.ui.text_stop_C.text())
+        self.json_param['states'][1]['parameters'][3] = float(self.ui.text_start_A.text())
+        self.json_param['states'][1]['parameters'][4] = float(self.ui.text_start_B.text())
+        self.json_param['states'][1]['parameters'][5] = float(self.ui.text_start_C.text())
+        self.json_param['states'][1]['parameters'][6] = float(self.ui.text_stop_A.text())
+        self.json_param['states'][1]['parameters'][7] = float(self.ui.text_stop_B.text())
+        self.json_param['states'][1]['parameters'][8] = float(self.ui.text_stop_C.text())
         self.json_param['states'][0]['parameters'][10] = float(self.ui.text_open_impulse.text())
         self.json_param['states'][0]['parameters'][11] = float(self.ui.text_close_impulse.text())
         self.json_param['states'][1]['parameters'][10] = float(self.ui.text_open_impulse.text())
@@ -105,12 +101,26 @@ class MainWindow(QMainWindow):
         self.json_param['states'][0]['parameters'][9] = float(self.ui.text_main_fq.text())
         self.json_param['states'][1]['parameters'][9] = float(self.ui.text_main_fq.text())
 
-        self.sftp_client = self.li.ssh_client.open_sftp()
+        if self.ui.radio_voltage.isChecked():
+            self.json_param['states'][0]['parameters'][12] = 0
+            self.json_param['states'][1]['parameters'][12] = 0
 
-        with self.sftp_client.file('/usr/local/src/pow-edge-app/config.json', "w") as json_f:
-            json.dump(self.json_param, json_f)
+        elif self.ui.radio_current.isChecked():
+            self.json_param['states'][0]['parameters'][12] = 1
+            self.json_param['states'][1]['parameters'][12] = 1
 
-        self.sftp_client.close()
+        try:
+            self.sftp_client = self.li.ssh_client.open_sftp()
+
+            with self.sftp_client.file('/usr/local/src/pow-edge-app/config.json', "w") as json_f:
+                json.dump(self.json_param, json_f)
+
+            self.sftp_client.close()
+            raise Exception("Configuration successfully writen!")
+
+        except Exception as e:
+            text = str(e)
+            mw = ctl_message.Message(text)
 
     def restart_pow_service(self):
         (stdin, stdout, stderr) = self.li.ssh_client.exec_command('sh -l -c \'systemctl restart edge-pow\'')

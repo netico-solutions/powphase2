@@ -3,11 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="7bbee576-3350-4c21-9d51-552f5710b252" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/point-on-wave-configurator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pow_model/ctl_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_model/ctl_login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pow_model/ctl_main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_model/ctl_main_window.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pow_model/ctl_save_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_model/ctl_save_csv.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pow_view/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pow_view/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target.json" beforeDir="false" afterPath="$PROJECT_DIR$/target.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pow_view/save_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/save_csv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main_window.ui" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main_window.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/save_csv.ui" beforeDir="false" afterPath="$PROJECT_DIR$/resources/save_csv.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target.json" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +83,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mvc_app.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/point-on-wave-configurator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -149,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573377688090</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="hot patch -- don't ask">
+      <created>1573410795639</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1573410795639</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -167,7 +179,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed most bugs, still needs testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed most bugs, still needs testing" />
+    <MESSAGE value="hot patch -- don't ask" />
+    <option name="LAST_COMMIT_MESSAGE" value="hot patch -- don't ask" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
