@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_ConnectDialog(object):
     def setupUi(self, ConnectDialog):
         ConnectDialog.setObjectName("ConnectDialog")
-        ConnectDialog.resize(676, 302)
+        ConnectDialog.setFixedSize(676, 302)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)

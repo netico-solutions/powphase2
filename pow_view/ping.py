@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_PingDialog(object):
     def setupUi(self, PingDialog):
         PingDialog.setObjectName("PingDialog")
-        PingDialog.resize(622, 237)
+        PingDialog.setFixedSize(622, 237)
         self.consoleOutTxt = QtWidgets.QTextBrowser(PingDialog)
         self.consoleOutTxt.setGeometry(QtCore.QRect(20, 20, 581, 192))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)

@@ -14,7 +14,7 @@ class Ui_SaveFile(object):
     def setupUi(self, SaveFile):
         SaveFile.setObjectName("SaveFile")
         SaveFile.setWindowModality(QtCore.Qt.ApplicationModal)
-        SaveFile.resize(790, 479)
+        SaveFile.setFixedSize(790, 479)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)

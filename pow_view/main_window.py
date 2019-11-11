@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_PointOnWaveConfigurator(object):
     def setupUi(self, PointOnWaveConfigurator):
         PointOnWaveConfigurator.setObjectName("PointOnWaveConfigurator")
-        PointOnWaveConfigurator.resize(724, 558)
+        PointOnWaveConfigurator.setFixedSize(724, 558)
         self.centralwidget = QtWidgets.QWidget(PointOnWaveConfigurator)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)

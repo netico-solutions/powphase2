@@ -14,7 +14,7 @@ class Ui_message(object):
     def setupUi(self, message):
         message.setObjectName("message")
         message.setWindowModality(QtCore.Qt.ApplicationModal)
-        message.resize(667, 201)
+        message.setFixedSize(667, 201)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
