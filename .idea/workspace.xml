@@ -3,16 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7bbee576-3350-4c21-9d51-552f5710b252" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/point-on-wave-configurator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pow_model/ctl_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_model/ctl_login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pow_model/ctl_main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_model/ctl_main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pow_model/ctl_save_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_model/ctl_save_csv.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pow_view/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pow_view/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/main_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pow_view/message.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pow_view/ping.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/ping.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pow_view/save_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/save_csv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main_window.ui" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main_window.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/save_csv.ui" beforeDir="false" afterPath="$PROJECT_DIR$/resources/save_csv.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target.json" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573410795639</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="first version done">
+      <created>1573493177167</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1573493177167</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,7 +182,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed most bugs, still needs testing" />
     <MESSAGE value="hot patch -- don't ask" />
-    <option name="LAST_COMMIT_MESSAGE" value="hot patch -- don't ask" />
+    <MESSAGE value="first version done" />
+    <option name="LAST_COMMIT_MESSAGE" value="first version done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
