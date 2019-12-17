@@ -3,13 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7bbee576-3350-4c21-9d51-552f5710b252" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pow_view/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pow_model/ctl_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_model/ctl_login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pow_model/ctl_main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_model/ctl_main_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pow_model/ctl_save_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_model/ctl_save_csv.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pow_view/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pow_view/message.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/message.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pow_view/ping.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/ping.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pow_view/save_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/save_csv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main_window.ui" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main_window.ui" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,9 +19,15 @@
   </component>
   <component name="ProjectId" id="1RUBq28PbbiXpbwDNSmiqvYszxG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pow_model" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/point-on-wave-configurator.py" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -32,19 +37,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.powconfig">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="powphase2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -66,6 +59,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="powconfig" type="PythonConfigurationType" factoryName="Python">
+      <module name="powphase2-qt" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$python$/python3.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/point-on-wave-configurator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="pyconfig" type="PythonConfigurationType" factoryName="Python" singleton="false">
       <module name="powphase2-qt" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -73,7 +87,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="/usr/bin/python3.5" />
+      <option name="SDK_HOME" value="$python$/python3.5" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -130,6 +144,22 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.pyconfig" />
+      <item itemvalue="Python.powconfig" />
+    </list>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -184,6 +214,32 @@
     <MESSAGE value="hot patch -- don't ask" />
     <MESSAGE value="first version done" />
     <option name="LAST_COMMIT_MESSAGE" value="first version done" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2338" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576589385446">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2338" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1576589385446" />
+    <state x="2663" y="310" width="424" height="482" key="FileChooserDialogImpl" timestamp="1576589376580">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2663" y="310" width="424" height="482" key="FileChooserDialogImpl/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1576589376580" />
+    <state width="1897" height="117" key="GridCell.Tab.0.bottom" timestamp="1576592912822">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="117" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1576592912822" />
+    <state width="1897" height="117" key="GridCell.Tab.0.center" timestamp="1576592912822">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="117" key="GridCell.Tab.0.center/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1576592912822" />
+    <state width="1897" height="117" key="GridCell.Tab.0.left" timestamp="1576592912821">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="117" key="GridCell.Tab.0.left/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1576592912821" />
+    <state width="1897" height="117" key="GridCell.Tab.0.right" timestamp="1576592912822">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="117" key="GridCell.Tab.0.right/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1576592912822" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

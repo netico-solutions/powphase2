@@ -68,7 +68,6 @@ class loginWindow(QDialog):
             while self.conn_active_flag:
                 try:
                     self.ssh_client.exec_command('ls', timeout=3)
-                    print("Connected.")
                     time.sleep(3)
                 except Exception as e:
                     print("Connection Error!")
@@ -82,7 +81,6 @@ class loginWindow(QDialog):
 
             else:
                 time.sleep(2)
-                print("No active connection.")
 
 
 

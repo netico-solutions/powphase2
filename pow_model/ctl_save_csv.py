@@ -15,7 +15,7 @@ from PyQt5 import QtGui
 class saveCsvWindow(QDialog):
     def __init__(self):
         super().__init__()
-        self.filepath = '/usr/local/src/pow-edge-app/'
+        self.filepath = '/usr/local/src/pow-edge-app/csv_files/'
 
         with open('target.json', 'r') as outfile:
             self.ssh_target = json.load(outfile)

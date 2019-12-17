@@ -1,4 +1,5 @@
 import sys
+import ast
 import time
 import json
 import threading
@@ -48,12 +49,8 @@ class MainWindow(QMainWindow):
         self.sftp_client.close()
 
         #states[0] -> open, states[1] -> close
-        self.ui.text_start_A.clear()
-        self.ui.text_start_B.clear()
-        self.ui.text_start_C.clear()
-        self.ui.text_stop_A.clear()
-        self.ui.text_stop_B.clear()
-        self.ui.text_stop_C.clear()
+        self.ui.text_open_point.clear()
+        self.ui.text_close_point.clear()
         self.ui.text_open_impulse.clear()
         self.ui.text_close_impulse.clear()
         self.ui.text_open_angle.clear()
@@ -62,54 +59,60 @@ class MainWindow(QMainWindow):
         self.ui.radio_voltage.setChecked(False)
         self.ui.radio_current.setChecked(False)
 
-        self.ui.text_start_A.setText(str(self.json_param['states'][0]['parameters'][3]))
-        self.ui.text_start_B.setText(str(self.json_param['states'][0]['parameters'][4]))
-        self.ui.text_start_C.setText(str(self.json_param['states'][0]['parameters'][5]))
-        self.ui.text_stop_A.setText(str(self.json_param['states'][0]['parameters'][6]))
-        self.ui.text_stop_B.setText(str(self.json_param['states'][0]['parameters'][7]))
-        self.ui.text_stop_C.setText(str(self.json_param['states'][0]['parameters'][8]))
-        self.ui.text_open_impulse.setText(str(self.json_param['states'][0]['parameters'][10]))
-        self.ui.text_close_impulse.setText(str(self.json_param['states'][0]['parameters'][11]))
+        self.ui.text_open_point.setText(str(self.json_param['states'][0]['time_temp']))
+        self.ui.text_close_point.setText(str(self.json_param['states'][1]['time_temp']))
+        self.ui.text_open_impulse.setText(str(self.json_param['states'][0]['impulse']))
+        self.ui.text_close_impulse.setText(str(self.json_param['states'][1]['impulse']))
         self.ui.text_open_angle.setText(str(self.json_param['states'][0]['angle']))
         self.ui.text_close_angle.setText(str(self.json_param['states'][1]['angle']))
-        self.ui.text_main_fq.setText(str(self.json_param['states'][0]['parameters'][9]))
+        self.ui.text_main_fq.setText(str(self.json_param['main_frequency']))
 
-        if self.json_param['states'][1]['parameters'][12]:
+        if self.json_param['states'][1]['input_signal']:
             self.ui.radio_current.setChecked(True)
         else:
             self.ui.radio_voltage.setChecked(True)
 
     def write_json_parameters(self):
-        self.json_param['states'][0]['parameters'][3] = float(self.ui.text_start_A.text())
-        self.json_param['states'][0]['parameters'][4] = float(self.ui.text_start_B.text())
-        self.json_param['states'][0]['parameters'][5] = float(self.ui.text_start_C.text())
-        self.json_param['states'][0]['parameters'][6] = float(self.ui.text_stop_A.text())
-        self.json_param['states'][0]['parameters'][7] = float(self.ui.text_stop_B.text())
-        self.json_param['states'][0]['parameters'][8] = float(self.ui.text_stop_C.text())
-        self.json_param['states'][1]['parameters'][3] = float(self.ui.text_start_A.text())
-        self.json_param['states'][1]['parameters'][4] = float(self.ui.text_start_B.text())
-        self.json_param['states'][1]['parameters'][5] = float(self.ui.text_start_C.text())
-        self.json_param['states'][1]['parameters'][6] = float(self.ui.text_stop_A.text())
-        self.json_param['states'][1]['parameters'][7] = float(self.ui.text_stop_B.text())
-        self.json_param['states'][1]['parameters'][8] = float(self.ui.text_stop_C.text())
-        self.json_param['states'][0]['parameters'][10] = float(self.ui.text_open_impulse.text())
-        self.json_param['states'][0]['parameters'][11] = float(self.ui.text_close_impulse.text())
-        self.json_param['states'][1]['parameters'][10] = float(self.ui.text_open_impulse.text())
-        self.json_param['states'][1]['parameters'][11] = float(self.ui.text_close_impulse.text())
-        self.json_param['states'][0]['angle'] = float(self.ui.text_open_angle.text())
-        self.json_param['states'][1]['angle'] = float(self.ui.text_close_angle.text())
-        self.json_param['states'][0]['parameters'][9] = float(self.ui.text_main_fq.text())
-        self.json_param['states'][1]['parameters'][9] = float(self.ui.text_main_fq.text())
-
-        if self.ui.radio_voltage.isChecked():
-            self.json_param['states'][0]['parameters'][12] = 0
-            self.json_param['states'][1]['parameters'][12] = 0
-
-        elif self.ui.radio_current.isChecked():
-            self.json_param['states'][0]['parameters'][12] = 1
-            self.json_param['states'][1]['parameters'][12] = 1
-
         try:
+            open_point_text = ast.literal_eval(self.ui.text_open_point.text())
+            close_point_text = ast.literal_eval(self.ui.text_close_point.text())
+
+            assert isinstance(open_point_text,list), "Input parameter must be a list"
+            assert isinstance(close_point_text,list), "Input parameter must be a list"
+            assert len(open_point_text) > 1, "Insert at least two temp_time tuples"
+            assert len(close_point_text) > 1, "Insert at least two temp_time tuples"
+
+            for temp,times in open_point_text:
+                assert isinstance(temp, int), "Temperature value must be an integer"
+                assert isinstance(times, list), "Time values must be in a list"
+                assert len(times) == 3, "You have to specify time values for all three phases"
+                for time in times:
+                    assert isinstance(time, float), "Time value must be a float"
+
+            for temp,times in close_point_text:
+                assert isinstance(temp, int), "Temperature value must be an integer"
+                assert isinstance(times, list), "Time values must be in a list"
+                assert len(times) == 3, "You have to specify time values for all three phases"
+                for time in times:
+                    assert isinstance(time, float), "Time value must be a float"
+
+            self.json_param['states'][0]['time_temp'] = ast.literal_eval(self.ui.text_open_point.text())
+            self.json_param['states'][1]['time_temp'] = ast.literal_eval(self.ui.text_close_point.text())
+            self.json_param['states'][0]['impulse'] = float(self.ui.text_open_impulse.text())
+            self.json_param['states'][1]['impulse'] = float(self.ui.text_close_impulse.text())
+            self.json_param['states'][0]['angle'] = float(self.ui.text_open_angle.text())
+            self.json_param['states'][1]['angle'] = float(self.ui.text_close_angle.text())
+            self.json_param['main_frequency'] = float(self.ui.text_main_fq.text())
+
+            if self.ui.radio_voltage.isChecked():
+                self.json_param['states'][0]['input_signal'] = 0
+                self.json_param['states'][1]['input_signal'] = 0
+
+            elif self.ui.radio_current.isChecked():
+                self.json_param['states'][0]['input_signal'] = 1
+                self.json_param['states'][1]['input_signal'] = 1
+
+
             self.sftp_client = self.li.ssh_client.open_sftp()
 
             with self.sftp_client.file('/usr/local/src/pow-edge-app/config.json', "w") as json_f:

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>724</width>
-    <height>558</height>
+    <width>1053</width>
+    <height>685</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>290</x>
       <y>10</y>
-      <width>381</width>
-      <height>471</height>
+      <width>751</width>
+      <height>611</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -33,7 +33,7 @@
      <property name="geometry">
       <rect>
        <x>170</x>
-       <y>160</y>
+       <y>230</y>
        <width>201</width>
        <height>81</height>
       </rect>
@@ -70,7 +70,7 @@
        <enum>Qt::ClickFocus</enum>
       </property>
       <property name="inputMask">
-       <string>00.00</string>
+       <string>00.00; </string>
       </property>
      </widget>
     </widget>
@@ -78,7 +78,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>360</y>
+       <y>450</y>
        <width>361</width>
        <height>101</height>
       </rect>
@@ -94,12 +94,12 @@
        <rect>
         <x>80</x>
         <y>10</y>
-        <width>111</width>
+        <width>191</width>
         <height>20</height>
        </rect>
       </property>
       <property name="text">
-       <string>Angle [degrees]</string>
+       <string>Stop angle [degrees]</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_14">
@@ -141,7 +141,7 @@
        <enum>Qt::ClickFocus</enum>
       </property>
       <property name="inputMask">
-       <string>000.0</string>
+       <string>000.0; </string>
       </property>
      </widget>
      <widget class="QLineEdit" name="text_open_angle">
@@ -157,7 +157,7 @@
        <enum>Qt::ClickFocus</enum>
       </property>
       <property name="inputMask">
-       <string>000.0</string>
+       <string>000.0; </string>
       </property>
      </widget>
     </widget>
@@ -166,8 +166,8 @@
       <rect>
        <x>9</x>
        <y>10</y>
-       <width>361</width>
-       <height>141</height>
+       <width>731</width>
+       <height>91</height>
       </rect>
      </property>
      <property name="frameShape">
@@ -176,71 +176,25 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QLabel" name="label_4">
+     <widget class="QLabel" name="label_18">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>62</width>
+        <width>701</width>
         <height>20</height>
        </rect>
       </property>
       <property name="text">
-       <string>Phase</string>
+       <string>Open point [[temp1,[time1 PhA, time1 PhB, time1 PhC]],...[tempN,[timeN PhA, timeN PhB, timeN PhC]]]</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_18">
-      <property name="geometry">
-       <rect>
-        <x>80</x>
-        <y>10</y>
-        <width>131</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Starting point [ms]</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="layoutWidget">
+     <widget class="QLineEdit" name="text_open_point">
       <property name="geometry">
        <rect>
         <x>20</x>
         <y>40</y>
-        <width>20</width>
-        <height>91</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
-       <item>
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>A</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_7">
-         <property name="text">
-          <string>B</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_6">
-         <property name="text">
-          <string>C</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QLineEdit" name="text_start_A">
-      <property name="geometry">
-       <rect>
-        <x>80</x>
-        <y>40</y>
-        <width>81</width>
+        <width>661</width>
         <height>28</height>
        </rect>
       </property>
@@ -248,100 +202,7 @@
        <enum>Qt::ClickFocus</enum>
       </property>
       <property name="inputMask">
-       <string notr="true">00.00</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="text_stop_A">
-      <property name="geometry">
-       <rect>
-        <x>220</x>
-        <y>40</y>
-        <width>81</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="focusPolicy">
-       <enum>Qt::ClickFocus</enum>
-      </property>
-      <property name="inputMask">
-       <string>00.00</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="text_stop_B">
-      <property name="geometry">
-       <rect>
-        <x>220</x>
-        <y>70</y>
-        <width>81</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="focusPolicy">
-       <enum>Qt::ClickFocus</enum>
-      </property>
-      <property name="inputMask">
-       <string>00.00</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="text_start_B">
-      <property name="geometry">
-       <rect>
-        <x>80</x>
-        <y>70</y>
-        <width>81</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="focusPolicy">
-       <enum>Qt::ClickFocus</enum>
-      </property>
-      <property name="inputMask">
-       <string>00.00</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="text_stop_C">
-      <property name="geometry">
-       <rect>
-        <x>220</x>
-        <y>100</y>
-        <width>81</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="focusPolicy">
-       <enum>Qt::ClickFocus</enum>
-      </property>
-      <property name="inputMask">
-       <string>00.00</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="text_start_C">
-      <property name="geometry">
-       <rect>
-        <x>80</x>
-        <y>100</y>
-        <width>81</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="focusPolicy">
-       <enum>Qt::ClickFocus</enum>
-      </property>
-      <property name="inputMask">
-       <string>00.00</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_20">
-      <property name="geometry">
-       <rect>
-        <x>220</x>
-        <y>10</y>
-        <width>131</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Stop point [ms]</string>
+       <string notr="true"/>
       </property>
      </widget>
     </widget>
@@ -349,7 +210,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>250</y>
+       <y>330</y>
        <width>361</width>
        <height>101</height>
       </rect>
@@ -412,7 +273,7 @@
        <enum>Qt::ClickFocus</enum>
       </property>
       <property name="inputMask">
-       <string>00.00</string>
+       <string>00.00; </string>
       </property>
      </widget>
      <widget class="QLineEdit" name="text_close_impulse">
@@ -428,7 +289,7 @@
        <enum>Qt::ClickFocus</enum>
       </property>
       <property name="inputMask">
-       <string>00.00</string>
+       <string>00.00; </string>
       </property>
      </widget>
     </widget>
@@ -436,7 +297,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>160</y>
+       <y>230</y>
        <width>151</width>
        <height>81</height>
       </rect>
@@ -487,19 +348,65 @@
       </property>
      </widget>
     </widget>
+    <widget class="QFrame" name="frame_7">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>731</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>701</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Close point [[temp1,[time1 PhA, time1 PhB, time1 PhC]],...[tempN,[timeN PhA, timeN PhB, timeN PhC]]]</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="text_close_point">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>661</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::ClickFocus</enum>
+      </property>
+      <property name="inputMask">
+       <string notr="true"/>
+      </property>
+     </widget>
+    </widget>
     <zorder>frame_6</zorder>
     <zorder>frame_4</zorder>
     <zorder>frame_3</zorder>
     <zorder>frame_2</zorder>
     <zorder>frame_5</zorder>
+    <zorder>frame_7</zorder>
    </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>30</x>
       <y>10</y>
-      <width>241</width>
-      <height>341</height>
+      <width>252</width>
+      <height>355</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -615,26 +522,13 @@
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="label_9">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>360</y>
-      <width>221</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/netico-group/Netico-Group-Logo.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>724</width>
+     <width>1053</width>
      <height>25</height>
     </rect>
    </property>
@@ -656,8 +550,6 @@
    </property>
   </action>
  </widget>
- <resources>
-  <include location="group-logo.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
