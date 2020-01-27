@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>SaveFile</class>
- <widget class="QDialog" name="SaveFile">
+ <class>FileDialog</class>
+ <widget class="QDialog" name="FileDialog">
   <property name="windowModality">
    <enum>Qt::ApplicationModal</enum>
   </property>
@@ -49,8 +49,8 @@
     <rect>
      <x>10</x>
      <y>60</y>
-     <width>91</width>
-     <height>71</height>
+     <width>100</width>
+     <height>107</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -58,6 +58,13 @@
      <widget class="QPushButton" name="push_list_files">
       <property name="text">
        <string>List Files</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Plot File</string>
       </property>
      </widget>
     </item>
