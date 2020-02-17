@@ -60,7 +60,6 @@ class loginWindow(QDialog):
         except Exception as e:
             text = "Connection Error: " + str(e)
             mw = ctl_message.Message(text)
-            print("Connection Error!")
             time.sleep(1)
 
     def is_active(self):
@@ -70,7 +69,6 @@ class loginWindow(QDialog):
                     self.ssh_client.exec_command('ls', timeout=3)
                     time.sleep(3)
                 except Exception as e:
-                    print("Connection Error!")
                     self.ssh_client.close()
                     self.conn_active_flag = False
                     time.sleep(1)

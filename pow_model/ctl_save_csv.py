@@ -48,8 +48,6 @@ class saveCsvWindow(QDialog):
         except Exception as e:
             text = "Connection Error: " + str(e)
             mw = ctl_message.Message(text)
-            print(e)
-            print("Connection Error!")
 
         self.setModal(True)
         self.show()
@@ -73,7 +71,6 @@ class saveCsvWindow(QDialog):
             sep = '\t'
             remote_file = remote_file.split(sep, 1)[0]
             remote_csv_filename = self.filepath + remote_file
-            print(remote_csv_filename)
 
             ftp = self.ssh_client.open_sftp()
             remote_csv_file = ftp.file(remote_csv_filename, "r")
@@ -95,9 +92,6 @@ class saveCsvWindow(QDialog):
             text = str(e)
             mw = ctl_message.Message(text)
 
-            print(e)
-
-
     def list_remote_directory(self):
         self.list_entry_model.clear()
 
@@ -118,11 +112,11 @@ class saveCsvWindow(QDialog):
             self.ui.push_save_file.setEnabled(True)
             self.ui.push_delete_file.setEnabled(True)
             self.ui.push_plot_file.setEnabled(True)
+            ftp.close()
 
         except Exception as e:
             text = "Error: " + str(e)
             mw = ctl_message.Message(text)
-            print(e)
             ftp.close()
             self.close()
 
@@ -168,7 +162,6 @@ class saveCsvWindow(QDialog):
             sep = '\t'
             remote_file = remote_file.split(sep, 1)[0]
             remote_csv_filename = self.filepath + remote_file
-            print(remote_csv_filename)
 
             ftp = self.ssh_client.open_sftp()
             remote_csv_file = ftp.file(remote_csv_filename, "r")
@@ -181,7 +174,10 @@ class saveCsvWindow(QDialog):
             for channel in remote_file_data:
                 plot_csv_data.append(ast.literal_eval(channel))
 
-            fig,axs = plt.subplots(2, sharex=True)
+            for channel in range(len(plot_csv_data)):
+                plot_csv_data[channel] = list(plot_csv_data[channel])
+
+            fig, axs = plt.subplots(2, sharex=True)
             fig.suptitle(remote_file)
             axs[0].set_title('Voltage/Digital')
             axs[1].set_title('Current/Digital')
@@ -189,25 +185,29 @@ class saveCsvWindow(QDialog):
             axd2 = axs[1].twinx()
 
             for channel in v_ch:
+                for sample in range(len(plot_csv_data[channel])):
+                    plot_csv_data[channel][sample] *= (25.6 / 32768.0)
+
                 axs[0].plot(range(len(plot_csv_data[channel])), plot_csv_data[channel], color=color_list[v_ch.index(channel)])
 
             for channel in d_io:
                 axd1.plot(range(len(plot_csv_data[channel])), plot_csv_data[channel], color=color_list[d_io.index(channel)])
 
             for channel in c_ch:
+                for sample in range(len(plot_csv_data[channel])):
+                    plot_csv_data[channel][sample] *= (16.15 * 2.56 / 32768.0 * 10000.0)
+
                 axs[1].plot(range(len(plot_csv_data[channel])), plot_csv_data[channel], color=color_list[c_ch.index(channel)])
 
             for channel in d_io:
                 axd2.plot(range(len(plot_csv_data[channel])), plot_csv_data[channel], color=color_list[d_io.index(channel)])
 
             plt.show()
-            self.close()
+
 
         except Exception as e:
             text = str(e)
             mw = ctl_message.Message(text)
-            print(e)
-
 
     def closeEvent(self, event):
         self.ssh_client.close()
