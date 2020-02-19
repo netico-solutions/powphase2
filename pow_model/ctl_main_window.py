@@ -68,8 +68,8 @@ class MainWindow(QMainWindow):
 
         self.ui.text_open_point.setText(str(self.json_param['states'][0]['time_temp']))
         self.ui.text_close_point.setText(str(self.json_param['states'][1]['time_temp']))
-        self.ui.text_open_impulse.setText(str(self.json_param['states'][1]['impulse']))
-        self.ui.text_close_impulse.setText(str(self.json_param['states'][0]['impulse']))
+        self.ui.text_open_impulse.setText(str(self.json_param['states'][0]['impulse']))
+        self.ui.text_close_impulse.setText(str(self.json_param['states'][1]['impulse']))
         self.ui.text_open_angle.setText(str(self.json_param['states'][0]['angle']))
         self.ui.text_close_angle.setText(str(self.json_param['states'][1]['angle']))
         self.ui.text_main_fq.setText(str(self.json_param['main_frequency']))
@@ -110,8 +110,8 @@ class MainWindow(QMainWindow):
 
             self.json_param['states'][0]['time_temp'] = ast.literal_eval(self.ui.text_open_point.text())
             self.json_param['states'][1]['time_temp'] = ast.literal_eval(self.ui.text_close_point.text())
-            self.json_param['states'][1]['impulse'] = float(self.ui.text_open_impulse.text())
-            self.json_param['states'][0]['impulse'] = float(self.ui.text_close_impulse.text())
+            self.json_param['states'][0]['impulse'] = float(self.ui.text_open_impulse.text())
+            self.json_param['states'][1]['impulse'] = float(self.ui.text_close_impulse.text())
             self.json_param['states'][0]['angle'] = float(self.ui.text_open_angle.text())
             self.json_param['states'][1]['angle'] = float(self.ui.text_close_angle.text())
             self.json_param['main_frequency'] = float(self.ui.text_main_fq.text())

@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bbee576-3350-4c21-9d51-552f5710b252" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pow_model/ctl_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_model/ctl_login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pow_model/ctl_main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_model/ctl_main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pow_model/ctl_save_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_model/ctl_save_csv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pow_view/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main_window.ui" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main_window.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pow_view/Netico-Group-Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pow_view/group-logo.qrc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +32,18 @@
       <recent name="$PROJECT_DIR$/mdl" />
       <recent name="$PROJECT_DIR$" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Python.powconfig">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -66,7 +74,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$python$/python3.7" />
+      <option name="SDK_HOME" value="/usr/bin/python3.5" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -148,18 +156,6 @@
       <item itemvalue="Python.powconfig" />
       <item itemvalue="Python.pyconfig" />
     </list>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
