@@ -195,7 +195,7 @@ class saveCsvWindow(QDialog):
 
             for channel in c_ch:
                 for sample in range(len(plot_csv_data[channel])):
-                    plot_csv_data[channel][sample] *= (16.15 * 2.56 / 32768.0 * 10000.0)
+                    plot_csv_data[channel][sample] *= (2.56 / 32768.0 * 2000.0)
 
                 axs[1].plot(range(len(plot_csv_data[channel])), plot_csv_data[channel], color=color_list[c_ch.index(channel)])
 

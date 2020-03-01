@@ -58,6 +58,9 @@
       </property>
      </widget>
      <widget class="QLineEdit" name="text_main_fq">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -66,11 +69,26 @@
         <height>28</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
       <property name="focusPolicy">
-       <enum>Qt::ClickFocus</enum>
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="acceptDrops">
+       <bool>false</bool>
       </property>
       <property name="inputMask">
-       <string>00.00; </string>
+       <string notr="true"/>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -141,7 +159,7 @@
        <enum>Qt::ClickFocus</enum>
       </property>
       <property name="inputMask">
-       <string>000.0; </string>
+       <string>000.0</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="text_open_angle">
@@ -157,7 +175,7 @@
        <enum>Qt::ClickFocus</enum>
       </property>
       <property name="inputMask">
-       <string>000.0; </string>
+       <string>000.0</string>
       </property>
      </widget>
     </widget>
@@ -273,7 +291,7 @@
        <enum>Qt::ClickFocus</enum>
       </property>
       <property name="inputMask">
-       <string>00.00; </string>
+       <string>00.00</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="text_close_impulse">
@@ -289,7 +307,7 @@
        <enum>Qt::ClickFocus</enum>
       </property>
       <property name="inputMask">
-       <string>00.00; </string>
+       <string>00.00</string>
       </property>
      </widget>
     </widget>
@@ -460,7 +478,7 @@
        <enum>Qt::ClickFocus</enum>
       </property>
       <property name="inputMask">
-       <string>99.99; </string>
+       <string>99.99</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="text_temp_1">
@@ -476,7 +494,7 @@
        <enum>Qt::ClickFocus</enum>
       </property>
       <property name="inputMask">
-       <string>#999.99; </string>
+       <string>#999.99</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="text_temp_2">
@@ -492,7 +510,7 @@
        <enum>Qt::ClickFocus</enum>
       </property>
       <property name="inputMask">
-       <string>#999.99; </string>
+       <string>#999.99</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="text_curr_2">
@@ -508,7 +526,7 @@
        <enum>Qt::ClickFocus</enum>
       </property>
       <property name="inputMask">
-       <string>99.99; </string>
+       <string>99.99</string>
       </property>
      </widget>
     </widget>
@@ -691,7 +709,7 @@
   </action>
  </widget>
  <resources>
-  <include location="logo.qrc"/>
+  <include location="group-logo.qrc"/>
  </resources>
  <connections/>
 </ui>

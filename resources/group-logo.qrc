@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="netico-group">
+    <file>../pow_view/Netico-Group-Logo.png</file>
+  </qresource>
+</RCC>

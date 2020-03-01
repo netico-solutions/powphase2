@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'resources/main_window.ui'
+# Form implementation generated from reading ui file 'main_window.ui'
 #
-# Created by: PyQt5 UI code generator 5.13.2
+# Created by: PyQt5 UI code generator 5.13.1
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -30,8 +30,15 @@ class Ui_PointOnWaveConfigurator(object):
         self.label_17.setGeometry(QtCore.QRect(10, 10, 281, 20))
         self.label_17.setObjectName("label_17")
         self.text_main_fq = QtWidgets.QLineEdit(self.frame_2)
+        self.text_main_fq.setEnabled(True)
         self.text_main_fq.setGeometry(QtCore.QRect(10, 40, 81, 28))
-        self.text_main_fq.setFocusPolicy(QtCore.Qt.ClickFocus)
+        self.text_main_fq.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
+        self.text_main_fq.setMouseTracking(False)
+        self.text_main_fq.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.text_main_fq.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
+        self.text_main_fq.setAcceptDrops(False)
+        self.text_main_fq.setInputMask("")
+        self.text_main_fq.setReadOnly(True)
         self.text_main_fq.setObjectName("text_main_fq")
         self.frame_3 = QtWidgets.QFrame(self.frame)
         self.frame_3.setGeometry(QtCore.QRect(10, 450, 361, 101))
@@ -228,18 +235,17 @@ class Ui_PointOnWaveConfigurator(object):
         _translate = QtCore.QCoreApplication.translate
         PointOnWaveConfigurator.setWindowTitle(_translate("PointOnWaveConfigurator", "Point on wave configuration toolbox"))
         self.label_17.setText(_translate("PointOnWaveConfigurator", "Main Frequency [Hz]:"))
-        self.text_main_fq.setInputMask(_translate("PointOnWaveConfigurator", "00.00; "))
         self.label_16.setText(_translate("PointOnWaveConfigurator", "Stop angle [degrees]"))
         self.label_14.setText(_translate("PointOnWaveConfigurator", "Open"))
         self.label_15.setText(_translate("PointOnWaveConfigurator", "Close"))
-        self.text_close_angle.setInputMask(_translate("PointOnWaveConfigurator", "000.0; "))
-        self.text_open_angle.setInputMask(_translate("PointOnWaveConfigurator", "000.0; "))
+        self.text_close_angle.setInputMask(_translate("PointOnWaveConfigurator", "000.0"))
+        self.text_open_angle.setInputMask(_translate("PointOnWaveConfigurator", "000.0"))
         self.label_18.setText(_translate("PointOnWaveConfigurator", "Open point [[temp1,[time1 PhA, time1 PhB, time1 PhC]],...[tempN,[timeN PhA, timeN PhB, timeN PhC]]]"))
         self.label_22.setText(_translate("PointOnWaveConfigurator", "Impulse duration [ms]"))
         self.label_23.setText(_translate("PointOnWaveConfigurator", "Open"))
         self.label_24.setText(_translate("PointOnWaveConfigurator", "Close"))
-        self.text_open_impulse.setInputMask(_translate("PointOnWaveConfigurator", "00.00; "))
-        self.text_close_impulse.setInputMask(_translate("PointOnWaveConfigurator", "00.00; "))
+        self.text_open_impulse.setInputMask(_translate("PointOnWaveConfigurator", "00.00"))
+        self.text_close_impulse.setInputMask(_translate("PointOnWaveConfigurator", "00.00"))
         self.radio_current.setText(_translate("PointOnWaveConfigurator", "Current"))
         self.label_8.setText(_translate("PointOnWaveConfigurator", "Input:"))
         self.radio_voltage.setText(_translate("PointOnWaveConfigurator", "Voltage"))
@@ -247,10 +253,10 @@ class Ui_PointOnWaveConfigurator(object):
         self.label_25.setText(_translate("PointOnWaveConfigurator", "Temperature sensor parameters:"))
         self.label_26.setText(_translate("PointOnWaveConfigurator", "Current points [mA]:"))
         self.label_27.setText(_translate("PointOnWaveConfigurator", "Temperature points [°C]:"))
-        self.text_curr_1.setInputMask(_translate("PointOnWaveConfigurator", "99.99; "))
-        self.text_temp_1.setInputMask(_translate("PointOnWaveConfigurator", "#999.99; "))
-        self.text_temp_2.setInputMask(_translate("PointOnWaveConfigurator", "#999.99; "))
-        self.text_curr_2.setInputMask(_translate("PointOnWaveConfigurator", "99.99; "))
+        self.text_curr_1.setInputMask(_translate("PointOnWaveConfigurator", "99.99"))
+        self.text_temp_1.setInputMask(_translate("PointOnWaveConfigurator", "#999.99"))
+        self.text_temp_2.setInputMask(_translate("PointOnWaveConfigurator", "#999.99"))
+        self.text_curr_2.setInputMask(_translate("PointOnWaveConfigurator", "99.99"))
         self.label_2.setText(_translate("PointOnWaveConfigurator", "Configuration"))
         self.push_read_json.setText(_translate("PointOnWaveConfigurator", "Read configuration from the device"))
         self.push_write_json.setText(_translate("PointOnWaveConfigurator", "Write configuration to the device"))

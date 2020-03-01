@@ -114,7 +114,6 @@ class MainWindow(QMainWindow):
             self.json_param['states'][1]['impulse'] = float(self.ui.text_close_impulse.text())
             self.json_param['states'][0]['angle'] = float(self.ui.text_open_angle.text())
             self.json_param['states'][1]['angle'] = float(self.ui.text_close_angle.text())
-            self.json_param['main_frequency'] = float(self.ui.text_main_fq.text())
             self.json_param['temp_calib']['current'][0] = ast.literal_eval(self.ui.text_curr_1.text())
             self.json_param['temp_calib']['current'][1] = ast.literal_eval(self.ui.text_curr_2.text())
             self.json_param['temp_calib']['temperature'][0] = ast.literal_eval(self.ui.text_temp_1.text())
