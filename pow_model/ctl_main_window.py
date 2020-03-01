@@ -78,7 +78,7 @@ class MainWindow(QMainWindow):
         self.ui.text_temp_1.setText(str(self.json_param['temp_calib']['temperature'][0]))
         self.ui.text_temp_2.setText(str(self.json_param['temp_calib']['temperature'][1]))
 
-        if self.json_param['states'][1]['input_signal']:
+        if self.json_param['states'][0]['input_signal']:
             self.ui.radio_current.setChecked(True)
         else:
             self.ui.radio_voltage.setChecked(True)

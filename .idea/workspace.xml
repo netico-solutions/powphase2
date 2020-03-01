@@ -4,9 +4,6 @@
     <list default="true" id="7bbee576-3350-4c21-9d51-552f5710b252" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pow_model/ctl_main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_model/ctl_main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pow_model/ctl_save_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_model/ctl_save_csv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pow_view/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main_window.ui" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main_window.ui" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -228,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582097261149</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Pow phase 2 - fixed known issues">
+      <created>1583089099611</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1583089099611</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -251,7 +255,8 @@
     <MESSAGE value="added lists for temp-times tuples, phase2 ready" />
     <MESSAGE value="added plot" />
     <MESSAGE value="issue with open/close states/json-states possible fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="issue with open/close states/json-states possible fix" />
+    <MESSAGE value="Pow phase 2 - fixed known issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pow phase 2 - fixed known issues" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2475" y="201" width="800" height="675" key="#Configure_Path_Variables" timestamp="1580124062394">
