@@ -188,19 +188,35 @@ class saveCsvWindow(QDialog):
                 for sample in range(len(plot_csv_data[channel])):
                     plot_csv_data[channel][sample] *= (25.6 / 32768.0)
 
-                axs[0].plot(range(len(plot_csv_data[channel])), plot_csv_data[channel], color=color_list[v_ch.index(channel)])
+                time_axis = list(range(len(plot_csv_data[channel])))
+                for index, time_ in enumerate(time_axis):
+                    time_axis[index] = time_ * 2.0 / float(len(time_axis))
+
+                axs[0].plot(time_axis, plot_csv_data[channel], color=color_list[v_ch.index(channel)])
+                axs[0].axhline(y=0, color='k')
 
             for channel in d_io:
-                axd1.plot(range(len(plot_csv_data[channel])), plot_csv_data[channel], color=color_list[d_io.index(channel)])
+                time_axis = list(range(len(plot_csv_data[channel])))
+                for index, time_ in enumerate(time_axis):
+                    time_axis[index] = time_ * 2.0 / float(len(time_axis))
+                axd1.plot(time_axis, plot_csv_data[channel], color=color_list[d_io.index(channel)])
 
             for channel in c_ch:
                 for sample in range(len(plot_csv_data[channel])):
                     plot_csv_data[channel][sample] *= (2.56 / 32768.0 * 2000.0)
 
-                axs[1].plot(range(len(plot_csv_data[channel])), plot_csv_data[channel], color=color_list[c_ch.index(channel)])
+                time_axis = list(range(len(plot_csv_data[channel])))
+                for index, time_ in enumerate(time_axis):
+                    time_axis[index] = time_ * 2.0 / float(len(time_axis))
+
+                axs[1].plot(time_axis, plot_csv_data[channel], color=color_list[c_ch.index(channel)])
+                axs[1].axhline(y=0, color='k')
 
             for channel in d_io:
-                axd2.plot(range(len(plot_csv_data[channel])), plot_csv_data[channel], color=color_list[d_io.index(channel)])
+                time_axis = list(range(len(plot_csv_data[channel])))
+                for index, time_ in enumerate(time_axis):
+                    time_axis[index] = time_ * 2.0 / float(len(time_axis))
+                axd2.plot(time_axis, plot_csv_data[channel], color=color_list[d_io.index(channel)])
 
             plt.show()
 
