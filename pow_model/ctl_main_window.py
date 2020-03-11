@@ -231,6 +231,7 @@ class MainWindow(QMainWindow):
             output = stdout.read()
             output = output.decode('utf-8')
             output = output.split()
+            self.logout()
             raise Exception("Device restarted, please reconnect.")
 
         except Exception as e:
