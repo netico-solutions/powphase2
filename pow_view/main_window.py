@@ -29,17 +29,26 @@ class Ui_PointOnWaveConfigurator(object):
         self.label_17 = QtWidgets.QLabel(self.frame_2)
         self.label_17.setGeometry(QtCore.QRect(10, 10, 281, 20))
         self.label_17.setObjectName("label_17")
-        self.text_main_fq = QtWidgets.QLineEdit(self.frame_2)
-        self.text_main_fq.setEnabled(True)
-        self.text_main_fq.setGeometry(QtCore.QRect(10, 40, 81, 28))
-        self.text_main_fq.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
-        self.text_main_fq.setMouseTracking(False)
-        self.text_main_fq.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.text_main_fq.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
-        self.text_main_fq.setAcceptDrops(False)
-        self.text_main_fq.setInputMask("")
-        self.text_main_fq.setReadOnly(True)
-        self.text_main_fq.setObjectName("text_main_fq")
+
+        self.list_of_avaliable_freqs = ['50.0', '60.0']
+        self.dict_of_avaliable_freqs = {value: index for index, value in enumerate(self.list_of_avaliable_freqs)}
+        self.dropdown_fq = QtWidgets.QComboBox(self.frame_2)
+        self.dropdown_fq.setGeometry(QtCore.QRect(10, 40, 81, 28))
+        self.dropdown_fq.addItems(self.list_of_avaliable_freqs)
+        self.dropdown_fq.setObjectName("text_main_fq")
+
+        # self.text_main_fq = QtWidgets.QLineEdit(self.frame_2)
+        # self.text_main_fq.setEnabled(True)
+        # self.text_main_fq.setGeometry(QtCore.QRect(10, 40, 81, 28))
+        # self.text_main_fq.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
+        # self.text_main_fq.setMouseTracking(False)
+        # self.text_main_fq.setFocusPolicy(QtCore.Qt.NoFocus)
+        # self.text_main_fq.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
+        # self.text_main_fq.setAcceptDrops(False)
+        # self.text_main_fq.setInputMask("")
+        # self.text_main_fq.setReadOnly(True)
+        # self.text_main_fq.setObjectName("text_main_fq")
+
         self.frame_3 = QtWidgets.QFrame(self.frame)
         self.frame_3.setGeometry(QtCore.QRect(10, 450, 361, 101))
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -172,12 +181,23 @@ class Ui_PointOnWaveConfigurator(object):
         self.label_2 = QtWidgets.QLabel(self.layoutWidget)
         self.label_2.setObjectName("label_2")
         self.verticalLayout.addWidget(self.label_2)
+
+        # Read/Write JSON
         self.push_read_json = QtWidgets.QPushButton(self.layoutWidget)
         self.push_read_json.setObjectName("push_read_json")
         self.verticalLayout.addWidget(self.push_read_json)
         self.push_write_json = QtWidgets.QPushButton(self.layoutWidget)
         self.push_write_json.setObjectName("push_write_json")
         self.verticalLayout.addWidget(self.push_write_json)
+
+        # Save/Load JSON
+        self.push_save_config = QtWidgets.QPushButton(self.layoutWidget)
+        self.push_save_config.setObjectName("push_save_config")
+        self.verticalLayout.addWidget(self.push_save_config)
+        self.push_load_config = QtWidgets.QPushButton(self.layoutWidget)
+        self.push_load_config.setObjectName("push_load_config")
+        self.verticalLayout.addWidget(self.push_load_config)
+
         self.verticalLayout_3.addLayout(self.verticalLayout)
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
         self.verticalLayout_2.setObjectName("verticalLayout_2")
@@ -194,6 +214,14 @@ class Ui_PointOnWaveConfigurator(object):
         self.label = QtWidgets.QLabel(self.layoutWidget)
         self.label.setObjectName("label")
         self.verticalLayout_2.addWidget(self.label)
+
+        # Device control buttons
+        self.push_login = QtWidgets.QPushButton(self.layoutWidget)  # Login
+        self.push_login.setObjectName("push_login")
+        self.verticalLayout_2.addWidget(self.push_login)
+        self.push_logout = QtWidgets.QPushButton(self.layoutWidget)  # Logout
+        self.push_logout.setObjectName("push_logout")
+        self.verticalLayout_2.addWidget(self.push_logout)
         self.push_sync_time = QtWidgets.QPushButton(self.layoutWidget)
         self.push_sync_time.setObjectName("push_sync_time")
         self.verticalLayout_2.addWidget(self.push_sync_time)
@@ -259,6 +287,14 @@ class Ui_PointOnWaveConfigurator(object):
         self.text_curr_2.setInputMask(_translate("PointOnWaveConfigurator", "99.99"))
         self.label_2.setText(_translate("PointOnWaveConfigurator", "Configuration"))
         self.push_read_json.setText(_translate("PointOnWaveConfigurator", "Read configuration from the device"))
+
+        self.push_login.setText(
+            _translate("PointOnWaveConfigurator", "Connect to the device"))
+        self.push_logout.setText(
+            _translate("PointOnWaveConfigurator", "Disconnect from the device"))
+        self.push_save_config.setText(_translate("PointOnWaveConfigurator", "PC <- Config tool"))
+        self.push_load_config.setText(_translate("PointOnWaveConfigurator", "PC -> Config tool"))
+
         self.push_write_json.setText(_translate("PointOnWaveConfigurator", "Write configuration to the device"))
         self.label_3.setText(_translate("PointOnWaveConfigurator", "Download .CSV file "))
         self.push_open_files.setText(_translate("PointOnWaveConfigurator", "Find remote files"))

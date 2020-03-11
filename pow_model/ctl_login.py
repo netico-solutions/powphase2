@@ -22,11 +22,16 @@ class loginWindow(QDialog):
         self.is_alive_thread.setDaemon(True)
         self.is_alive_thread.start()
         self.setModal(True)
+        self.ssh_client = None
+        # self.show()
+        # self.exec()
+
+    def show_me(self):
         self.show()
         self.exec()
 
     def closeEvent(self, event):
-        sys.exit(0)
+        self.hide()
 
     def ping_button_clicked(self):
         ip = self.ui.ip_adress.text()

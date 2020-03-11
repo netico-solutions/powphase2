@@ -43,7 +43,7 @@ class Ui_ConnectDialog(object):
         self.ip_adress.setInputMethodHints(QtCore.Qt.ImhNoAutoUppercase|QtCore.Qt.ImhPreferNumbers|QtCore.Qt.ImhUrlCharactersOnly)
         self.ip_adress.setMaxLength(40)
         self.ip_adress.setObjectName("ip_adress")
-        self.ip_adress.setText("192.168.2.50")
+        self.ip_adress.setText("192.168.2.51")
         self.username = QtWidgets.QLineEdit(self.layoutWidget)
         self.username.setInputMethodHints(QtCore.Qt.ImhLowercaseOnly|QtCore.Qt.ImhNoAutoUppercase|QtCore.Qt.ImhPreferLowercase)
         self.username.setMaxLength(7)
