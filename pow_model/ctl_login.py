@@ -83,6 +83,7 @@ class loginWindow(QDialog):
                     break
 
             else:
+
                 time.sleep(2)
 
 

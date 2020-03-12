@@ -237,9 +237,7 @@ class Ui_PointOnWaveConfigurator(object):
         spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_2.addItem(spacerItem2)
         self.verticalLayout_3.addLayout(self.verticalLayout_2)
-        self.logo = QtWidgets.QLabel(self.centralwidget)
-        self.logo.setGeometry(QtCore.QRect(30, 400, 241, 301))
-        self.logo.setObjectName("logo")
+
         PointOnWaveConfigurator.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(PointOnWaveConfigurator)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1053, 25))
@@ -255,6 +253,9 @@ class Ui_PointOnWaveConfigurator(object):
         self.actionClose.setObjectName("actionClose")
         self.menuFile.addAction(self.actionClose)
         self.menubar.addAction(self.menuFile.menuAction())
+        self.logo = QtWidgets.QLabel(self.centralwidget)
+        self.logo.setGeometry(QtCore.QRect(30, 401, 241, 241))
+        self.logo.setObjectName("logo")
 
         self.retranslateUi(PointOnWaveConfigurator)
         QtCore.QMetaObject.connectSlotsByName(PointOnWaveConfigurator)

@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7bbee576-3350-4c21-9d51-552f5710b252" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pow_model/ctl_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_model/ctl_login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pow_model/ctl_main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_model/ctl_main_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pow_view/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pow_view/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/main_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pow_view/message.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/message.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,19 +37,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.powconfig">
+  <component name="RunManager">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="powphase2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -68,27 +59,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="powconfig" type="PythonConfigurationType" factoryName="Python">
-      <module name="powphase2-qt" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="/usr/bin/python3.5" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/point-on-wave-configurator.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="pyconfig" type="PythonConfigurationType" factoryName="Python" singleton="false">
       <module name="powphase2-qt" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -96,7 +66,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$python$/python3.5" />
+      <option name="SDK_HOME" value="$python$/python3.7" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -153,10 +123,18 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Python.powconfig" />
-      <item itemvalue="Python.pyconfig" />
-    </list>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -263,10 +241,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2475" y="201" width="800" height="675" key="#Configure_Path_Variables/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1580124062394" />
-    <state x="2338" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576589385446">
+    <state x="2338" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584020044381">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2338" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1576589385446" />
+    <state x="2338" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584020044381" />
     <state x="2480" y="146" width="789" height="810" key="CommitChangelistDialog2" timestamp="1581969332677">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -275,22 +253,38 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2663" y="310" width="424" height="482" key="FileChooserDialogImpl/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1580124060616" />
-    <state width="1897" height="117" key="GridCell.Tab.0.bottom" timestamp="1581969070711">
+    <state width="1897" height="117" key="GridCell.Tab.0.bottom" timestamp="1584033965410">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1897" height="117" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1581969070711" />
-    <state width="1897" height="117" key="GridCell.Tab.0.center" timestamp="1581969070711">
+    <state width="1897" height="117" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584033965410" />
+    <state width="1897" height="117" key="GridCell.Tab.0.center" timestamp="1584033965410">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1897" height="117" key="GridCell.Tab.0.center/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1581969070711" />
-    <state width="1897" height="117" key="GridCell.Tab.0.left" timestamp="1581969070711">
+    <state width="1897" height="117" key="GridCell.Tab.0.center/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584033965410" />
+    <state width="1897" height="117" key="GridCell.Tab.0.left" timestamp="1584033965410">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1897" height="117" key="GridCell.Tab.0.left/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1581969070711" />
-    <state width="1897" height="117" key="GridCell.Tab.0.right" timestamp="1581969070711">
+    <state width="1897" height="117" key="GridCell.Tab.0.left/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584033965410" />
+    <state width="1897" height="117" key="GridCell.Tab.0.right" timestamp="1584033965410">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1897" height="117" key="GridCell.Tab.0.right/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1581969070711" />
+    <state width="1897" height="117" key="GridCell.Tab.0.right/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584033965410" />
+    <state width="1897" height="345" key="GridCell.Tab.1.bottom" timestamp="1584033965407">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="345" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584033965407" />
+    <state width="1897" height="345" key="GridCell.Tab.1.center" timestamp="1584033965407">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="345" key="GridCell.Tab.1.center/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584033965407" />
+    <state width="1897" height="345" key="GridCell.Tab.1.left" timestamp="1584033965407">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="345" key="GridCell.Tab.1.left/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584033965407" />
+    <state width="1897" height="345" key="GridCell.Tab.1.right" timestamp="1584033965407">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="345" key="GridCell.Tab.1.right/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584033965407" />
     <state x="2475" y="288" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1580147820510">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -303,15 +297,5 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2530" y="150" width="700" height="804" key="find.popup/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1581969067632" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pow_model/ctl_message.py</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

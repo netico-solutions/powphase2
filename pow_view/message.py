@@ -13,6 +13,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_message(object):
     def setupUi(self, message):
         message.setObjectName("message")
+        # enable custom window hint
+        message.setWindowFlags(message.windowFlags() | QtCore.Qt.CustomizeWindowHint)
+
+        # disable (but not hide) close button
+        message.setWindowFlags(message.windowFlags() & ~QtCore.Qt.WindowCloseButtonHint)
         message.setWindowModality(QtCore.Qt.ApplicationModal)
         message.setFixedSize(667, 201)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
@@ -21,6 +26,7 @@ class Ui_message(object):
         sizePolicy.setHeightForWidth(message.sizePolicy().hasHeightForWidth())
         message.setSizePolicy(sizePolicy)
         message.setFocusPolicy(QtCore.Qt.StrongFocus)
+        message.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
         self.push_ok = QtWidgets.QPushButton(message)
         self.push_ok.setGeometry(QtCore.QRect(290, 150, 83, 28))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)

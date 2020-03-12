@@ -178,19 +178,24 @@ class MainWindow(QMainWindow):
     def write_json_parameters(self):
 
         try:
-
             json_param = self.construct_config_params_dict()
-
             jsonschema.validate(json_param, schema=valid_schema)
-
             self.json_param = copy.deepcopy(json_param)
-
             sftp_client = self.li.ssh_client.open_sftp()
+
+            with sftp_client.open('/usr/local/src/pow-edge-app/config.json') as json_f:
+                parameters = json_f.read()
+                read_json_file = parameters.decode('utf-8')
+                read_json_file = json.loads(read_json_file)
+
+            if (read_json_file["main_frequency"] != self.json_param["main_frequency"]):
+                self.total_reconfigure()
 
             with sftp_client.file('/usr/local/src/pow-edge-app/config.json', "w") as json_f:
                 json.dump(self.json_param, json_f)
 
             sftp_client.close()
+
             raise Exception("Configuration successfully writen!")
 
         except jsonschema.exceptions.ValidationError as e:
@@ -288,6 +293,7 @@ class MainWindow(QMainWindow):
         self.ui.push_restart_svc.setEnabled(False)
         self.ui.push_sync_time.setEnabled(False)
         self.ui.push_logout.setEnabled(False)
+        self.ui.push_login.setEnabled(True)
 
     def enable_buttons_after_login(self):
         self.ui.push_read_json.setEnabled(True)
@@ -299,6 +305,7 @@ class MainWindow(QMainWindow):
         self.ui.push_restart_svc.setEnabled(True)
         self.ui.push_sync_time.setEnabled(True)
         self.ui.push_logout.setEnabled(True)
+        self.ui.push_login.setEnabled(False)
 
     def populate_config_fields(self):
         # states[0] -> open, states[1] -> close
@@ -349,7 +356,6 @@ class MainWindow(QMainWindow):
 
     def construct_config_params_dict(self):
         params = copy.deepcopy(self.dj)
-
         params['states'][0]['time_temp'] = ast.literal_eval(
             self.ui.text_open_point.text())
         params['states'][1]['time_temp'] = ast.literal_eval(
@@ -382,3 +388,23 @@ class MainWindow(QMainWindow):
                 'input_signal'] = 0
 
         return params
+
+    def total_reconfigure(self):
+        text = "Device reconfiguration:" \
+               "\nPress OK button and please wait for the heartBeat pattern on the status LED (~2 minutes)"
+        mw = ctl_message.Message(text)
+
+        if (self.json_param["main_frequency"] == 50.0):
+            (stdin, stdout, stderr) = self.li.ssh_client.exec_command \
+                ('sh -l -c \'cd /usr/local/src/urtu-base-sys-root-bin/; git checkout pow-50Hz; ./install.sh\'')
+            output = stdout.read()
+            output = output.decode('utf-8')
+            output = output.split()
+
+        elif (self.json_param["main_frequency"] == 60.0):
+            (stdin, stdout, stderr) = self.li.ssh_client.exec_command \
+                ('sh -l -c \'cd /usr/local/src/urtu-base-sys-root-bin/; git checkout pow-60hz; ./install.sh\'')
+            output = stdout.read()
+            output = output.decode('utf-8')
+            output = output.split()\
+

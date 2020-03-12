@@ -6,12 +6,24 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-
+import json
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_ConnectDialog(object):
+
+    def init_json_param(self):
+        try:
+            with open("target.json", "r") as init_json:
+                self.init_json_file = json.load(init_json)
+        except:
+            self.init_json_file = {"ip" : "192.168.2.50",
+                                   "user": "root",
+                                   "pass": "invalid_password"
+                                   }
+
     def setupUi(self, ConnectDialog):
+        self.init_json_param()
         ConnectDialog.setObjectName("ConnectDialog")
         ConnectDialog.setFixedSize(676, 302)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
@@ -43,19 +55,19 @@ class Ui_ConnectDialog(object):
         self.ip_adress.setInputMethodHints(QtCore.Qt.ImhNoAutoUppercase|QtCore.Qt.ImhPreferNumbers|QtCore.Qt.ImhUrlCharactersOnly)
         self.ip_adress.setMaxLength(40)
         self.ip_adress.setObjectName("ip_adress")
-        self.ip_adress.setText("192.168.2.51")
+        self.ip_adress.setText(self.init_json_file["ip"])
         self.username = QtWidgets.QLineEdit(self.layoutWidget)
         self.username.setInputMethodHints(QtCore.Qt.ImhLowercaseOnly|QtCore.Qt.ImhNoAutoUppercase|QtCore.Qt.ImhPreferLowercase)
         self.username.setMaxLength(7)
         self.username.setObjectName("username")
-        self.username.setText("root")
+        self.username.setText(self.init_json_file["user"])
         self.gridLayout.addWidget(self.username, 1, 1, 1, 1)
         self.gridLayout.addWidget(self.ip_adress, 0, 1, 1, 1)
         self.password = QtWidgets.QLineEdit(self.layoutWidget)
         self.password.setMaxLength(20)
         self.password.setEchoMode(QtWidgets.QLineEdit.Password)
         self.password.setObjectName("password")
-        self.password.setText("netico987")
+        self.password.setText(self.init_json_file["pass"])
         self.gridLayout.addWidget(self.password, 2, 1, 1, 1)
         self.layoutWidget1 = QtWidgets.QWidget(ConnectDialog)
         self.layoutWidget1.setGeometry(QtCore.QRect(100, 220, 471, 30))
