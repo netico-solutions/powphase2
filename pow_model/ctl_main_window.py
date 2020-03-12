@@ -35,7 +35,7 @@ class MainWindow(QMainWindow):
         self.ui.push_login.clicked.connect(self.login)
         self.ui.push_logout.clicked.connect(self.logout)
         self.li = ctl_login.loginWindow()
-        with open('A:/workspace/powphase2/config_schema/default_config.json',
+        with open('./config_schema/default_config.json',
                   'r') as default_config_file:
             self.json_param = json.load(default_config_file)
             self.dj = copy.deepcopy(self.json_param)
@@ -182,6 +182,8 @@ class MainWindow(QMainWindow):
             json_param = self.construct_config_params_dict()
 
             jsonschema.validate(json_param, schema=valid_schema)
+
+            self.json_param = copy.deepcopy(json_param)
 
             sftp_client = self.li.ssh_client.open_sftp()
 
@@ -368,6 +370,7 @@ class MainWindow(QMainWindow):
             self.ui.text_temp_1.text())
         params['temp_calib']['temperature'][1] = ast.literal_eval(
             self.ui.text_temp_2.text())
+        params['main_frequency'] = float(str(self.ui.dropdown_fq.currentText()))
 
         if self.ui.radio_voltage.isChecked():
             params['states'][0]['input_signal'] = 0
@@ -376,6 +379,6 @@ class MainWindow(QMainWindow):
         elif self.ui.radio_current.isChecked():
             params['states'][0]['input_signal'] = 1
             params['states'][1][
-                'input_signal'] = 0  # TODO da li ovde mozda treba da bude = 1 ??
-        # TODO dodaj i odabranu frekvenciju u json
+                'input_signal'] = 0
+
         return params

@@ -238,7 +238,7 @@ class Ui_PointOnWaveConfigurator(object):
         self.verticalLayout_2.addItem(spacerItem2)
         self.verticalLayout_3.addLayout(self.verticalLayout_2)
         self.logo = QtWidgets.QLabel(self.centralwidget)
-        self.logo.setGeometry(QtCore.QRect(30, 360, 241, 301))
+        self.logo.setGeometry(QtCore.QRect(30, 400, 241, 301))
         self.logo.setObjectName("logo")
         PointOnWaveConfigurator.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(PointOnWaveConfigurator)
