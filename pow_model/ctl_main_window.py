@@ -377,17 +377,15 @@ class MainWindow(QMainWindow):
             errora = stderr.read()
             errora = errora.decode('utf-8')
             print(errora)
-            output = output.split()
             print(output)
 
         elif (self.json_param["main_frequency"] == 60.0):
             (stdin, stdout, stderr) = self.li.ssh_client.exec_command \
-                ('sh -l -c \'cd /usr/local/src/urtu-base-sys-root-bin/; git checkout remotes/origin/pow-60hz; ./install.shqq\'')
+                ('sh -l -c \'cd /usr/local/src/urtu-base-sys-root-bin/; git checkout remotes/origin/pow-60hz; ./install.sh\'')
             output = stdout.read()
             output = output.decode('utf-8')
             errora = stderr.read()
             errora = errora.decode('utf-8')
             print(errora)
             print(output)
-            output = output.split()\
 
