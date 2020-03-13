@@ -262,7 +262,7 @@ class Ui_PointOnWaveConfigurator(object):
 
     def retranslateUi(self, PointOnWaveConfigurator):
         _translate = QtCore.QCoreApplication.translate
-        PointOnWaveConfigurator.setWindowTitle(_translate("PointOnWaveConfigurator", "Point on wave configuration toolbox"))
+        PointOnWaveConfigurator.setWindowTitle(_translate("PointOnWaveConfigurator", "Point on Wave configuration toolbox - Development release 1.0b"))
         self.label_17.setText(_translate("PointOnWaveConfigurator", "Main Frequency [Hz]:"))
         self.label_16.setText(_translate("PointOnWaveConfigurator", "Stop angle [degrees]"))
         self.label_14.setText(_translate("PointOnWaveConfigurator", "Open"))

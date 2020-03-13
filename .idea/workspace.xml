@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7bbee576-3350-4c21-9d51-552f5710b252" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pow_model/ctl_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_model/ctl_login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pow_model/ctl_main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_model/ctl_main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pow_view/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pow_view/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pow_view/message.py" beforeDir="false" afterPath="$PROJECT_DIR$/pow_view/message.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583089099611</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Pow phase 2 - added complete reconfigure">
+      <created>1584036249443</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1584036249443</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,7 +238,8 @@
     <MESSAGE value="added plot" />
     <MESSAGE value="issue with open/close states/json-states possible fix" />
     <MESSAGE value="Pow phase 2 - fixed known issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pow phase 2 - fixed known issues" />
+    <MESSAGE value="Pow phase 2 - added complete reconfigure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pow phase 2 - added complete reconfigure" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2475" y="201" width="800" height="675" key="#Configure_Path_Variables" timestamp="1580124062394">
@@ -245,30 +250,30 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2338" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584020044381" />
-    <state x="2480" y="146" width="789" height="810" key="CommitChangelistDialog2" timestamp="1581969332677">
+    <state x="2480" y="146" width="789" height="810" key="CommitChangelistDialog2" timestamp="1584036249274">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2480" y="146" width="789" height="810" key="CommitChangelistDialog2/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1581969332677" />
+    <state x="2480" y="146" width="789" height="810" key="CommitChangelistDialog2/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584036249274" />
     <state x="2663" y="310" width="424" height="482" key="FileChooserDialogImpl" timestamp="1580124060616">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2663" y="310" width="424" height="482" key="FileChooserDialogImpl/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1580124060616" />
-    <state width="1897" height="117" key="GridCell.Tab.0.bottom" timestamp="1584033965410">
+    <state width="1897" height="117" key="GridCell.Tab.0.bottom" timestamp="1584126503699">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1897" height="117" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584033965410" />
-    <state width="1897" height="117" key="GridCell.Tab.0.center" timestamp="1584033965410">
+    <state width="1897" height="117" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584126503699" />
+    <state width="1897" height="117" key="GridCell.Tab.0.center" timestamp="1584126503699">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1897" height="117" key="GridCell.Tab.0.center/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584033965410" />
-    <state width="1897" height="117" key="GridCell.Tab.0.left" timestamp="1584033965410">
+    <state width="1897" height="117" key="GridCell.Tab.0.center/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584126503699" />
+    <state width="1897" height="117" key="GridCell.Tab.0.left" timestamp="1584126503699">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1897" height="117" key="GridCell.Tab.0.left/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584033965410" />
-    <state width="1897" height="117" key="GridCell.Tab.0.right" timestamp="1584033965410">
+    <state width="1897" height="117" key="GridCell.Tab.0.left/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584126503699" />
+    <state width="1897" height="117" key="GridCell.Tab.0.right" timestamp="1584126503699">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1897" height="117" key="GridCell.Tab.0.right/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584033965410" />
+    <state width="1897" height="117" key="GridCell.Tab.0.right/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584126503699" />
     <state width="1897" height="345" key="GridCell.Tab.1.bottom" timestamp="1584033965407">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -285,10 +290,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1897" height="345" key="GridCell.Tab.1.right/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584033965407" />
-    <state x="2475" y="288" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1580147820510">
+    <state x="2475" y="288" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1584036254072">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2475" y="288" width="800" height="526" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1580147820510" />
+    <state x="2475" y="288" width="800" height="526" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.24.1920.1056@1920.0.1920.1080" timestamp="1584036254072" />
     <state x="2540" y="367" key="com.intellij.ide.util.TipDialog" timestamp="1580124048593">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

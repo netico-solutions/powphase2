@@ -258,32 +258,6 @@ class MainWindow(QMainWindow):
     def download_csv(self):
         self.sw = ctl_save_csv.saveCsvWindow()
 
-    def install_60hz_firmware(self):
-        try:
-            (stdin, stdout, stderr) = self.li.ssh_client.exec_command(
-                'sh -l -c \'urtu_fw load /usr/local/src/pow-edge-app/60hz.hex\'')
-            output = stdout.read()
-            output = output.decode('utf-8')
-            output = output.split()
-            raise Exception("Install 60 Hz firmware command sent!")
-
-        except Exception as e:
-            text = str(e)
-            mw = ctl_message.Message(text)
-
-    def install_50hz_firmware(self):
-        try:
-            (stdin, stdout, stderr) = self.li.ssh_client.exec_command(
-                'sh -l -c \'urtu_fw load /usr/local/src/pow-edge-app/50hz.hex\'')
-            output = stdout.read()
-            output = output.decode('utf-8')
-            output = output.split()
-            raise Exception("Install 50 Hz firmware command sent!")
-
-        except Exception as e:
-            text = str(e)
-            mw = ctl_message.Message(text)
-
     def disable_buttons_before_login(self):
         self.ui.push_read_json.setEnabled(False)
         self.ui.push_write_json.setEnabled(False)
@@ -393,18 +367,27 @@ class MainWindow(QMainWindow):
         text = "Device reconfiguration:" \
                "\nPress OK button and please wait for the heartBeat pattern on the status LED (~2 minutes)"
         mw = ctl_message.Message(text)
+        time.sleep(0.1)
 
         if (self.json_param["main_frequency"] == 50.0):
             (stdin, stdout, stderr) = self.li.ssh_client.exec_command \
-                ('sh -l -c \'cd /usr/local/src/urtu-base-sys-root-bin/; git checkout pow-50Hz; ./install.sh\'')
+                ('sh -l -c \'cd /usr/local/src/urtu-base-sys-root-bin/; git checkout remotes/origin/pow-50hz; ./install.sh\'')
             output = stdout.read()
             output = output.decode('utf-8')
+            errora = stderr.read()
+            errora = errora.decode('utf-8')
+            print(errora)
             output = output.split()
+            print(output)
 
         elif (self.json_param["main_frequency"] == 60.0):
             (stdin, stdout, stderr) = self.li.ssh_client.exec_command \
-                ('sh -l -c \'cd /usr/local/src/urtu-base-sys-root-bin/; git checkout pow-60hz; ./install.sh\'')
+                ('sh -l -c \'cd /usr/local/src/urtu-base-sys-root-bin/; git checkout remotes/origin/pow-60hz; ./install.shqq\'')
             output = stdout.read()
             output = output.decode('utf-8')
+            errora = stderr.read()
+            errora = errora.decode('utf-8')
+            print(errora)
+            print(output)
             output = output.split()\
 
